@@ -1,4 +1,14 @@
 ﻿{
+  "title": "EventSourceDemp",
+  "copyright": "",
+  "version": "1.0.0",
+  "description": "An event source demo web app",
+  "authors": [ "Ryan Crosby" ],
+  "packOptions": {
+    "tags": [ "" ],
+    "projectUrl": "https://github.com/crozone/EventSourceDemo",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
+  },
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
@@ -10,7 +20,6 @@
       "version": "1.0.0-preview2-final",
       "type": "build"
     },
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
     "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
     "Microsoft.AspNetCore.StaticFiles": "1.0.0",
     "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
@@ -47,19 +56,16 @@
       "System.GC.Server": true
     }
   },
-
   "publishOptions": {
     "include": [
       "wwwroot",
       "Views",
       "Areas/**/Views",
-      "appsettings.json",
-      "web.config"
+      "appsettings.json"
     ]
   },
 
   "scripts": {
-    "prepublish": [ "bower install", "dotnet bundle" ],
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
+    "prepublish": [ "bower install", "dotnet bundle" ]
   }
 }
